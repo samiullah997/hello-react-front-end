@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { showGreetings } from "./redux/reducer";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { showGreetings } from './redux/reducer';
 
 const Greeting = () => {
   const greetings = useSelector((state) => state.greetings);
@@ -11,7 +11,7 @@ const Greeting = () => {
   }, []);
   return (
     <div>
-      <h1>{greetings.name}</h1> 
+      <h1>{greetings.name}</h1>
     </div>
   );
 };

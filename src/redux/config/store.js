@@ -1,5 +1,5 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import greetingReducer from "../reducer";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import greetingReducer from '../reducer';
 
 const reducer = combineReducers({
   greetings: greetingReducer,

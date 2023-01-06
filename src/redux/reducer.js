@@ -1,11 +1,10 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const GREETINGS = "GREETINGS";
+const GREETINGS = 'GREETINGS';
 
-export const showGreetings = createAsyncThunk( GREETINGS, async (args, {dispatch}) => {
-
+export const showGreetings = createAsyncThunk(GREETINGS, async (args, { dispatch }) => {
   try {
-    const res = await fetch("http://localhost:3001/api/v1/greetings");
+    const res = await fetch('http://localhost:3001/api/v1/greetings');
     const data = await res.json();
     dispatch({ type: GREETINGS, greetings: data[0] });
   } catch (err) {
@@ -14,12 +13,12 @@ export const showGreetings = createAsyncThunk( GREETINGS, async (args, {dispatch
 });
 
 const greetingReducer = (state = [], action) => {
-    switch (action.type) {
-      case GREETINGS:
-        return action.greetings
-      default:
-        return state;
-    }
-  };
-  
-  export default greetingReducer;
+  switch (action.type) {
+    case GREETINGS:
+      return action.greetings;
+    default:
+      return state;
+  }
+};
+
+export default greetingReducer;
